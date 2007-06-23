@@ -5,7 +5,7 @@ use base qw( Class::Base );
 
 =head1 NAME
 
-List::Filter - container object for List::Filter filters
+List::Filter - named, persistent, shared lists of patterns
 
 =head1 SYNOPSIS
 
@@ -116,7 +116,7 @@ use List::Filter::Dispatcher;
 use Memoize;
 memoize( 'generate_dispatcher' );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =item new
 

@@ -9,7 +9,7 @@ WriteMakefile(
                          Class::Base              => 0.03,
                          Module::List             => 0.001,
                          Module::List::Pluggable  => 0.01,
-                         Test::File::Contents     => 0.05,
+                         Test::Trap               => 0,
                          Test::More               => 0,
                          DBI                      => 1.0,
                          Hash::Util               => 0,

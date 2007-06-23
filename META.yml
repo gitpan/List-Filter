@@ -1,7 +1,7 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         List-Filter
-version:      0.01
+version:      0.02
 version_from: lib/List/Filter.pm
 installdirs:  site
 requires:
@@ -22,8 +22,8 @@ requires:
     Module::List:                  0.001
     Module::List::Pluggable:       0.01
     strict:                        0
-    Test::File::Contents:          0.05
     Test::More:                    0
+    Test::Trap:                    0
     warnings:                      0
     YAML:                          0
 

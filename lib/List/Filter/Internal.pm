@@ -178,6 +178,8 @@ sub qualify_storage_guts {
     $storage = $storage;
   } else {
     $storage = [ $default_stash ];
+    # # make sure the directory exists
+    # mkpath( dirname( $default_stash ) ) or croak "Could not create location for $default_stash: $!";
   }
   return $storage;
 }
