@@ -345,7 +345,7 @@ sub objectify_storage {
 
   if (ref $stash eq 'HASH') {
 
-    $format      = $stash->{format} || 'XXX'; ### $stash->{type} ;  # allowing deprecated synonym "type"
+    $format      = $stash->{format};
     $connect_to  = $stash->{connect_to};
     $owner       = $stash->{owner};
     $password    = $stash->{password};

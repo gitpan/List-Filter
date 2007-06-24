@@ -339,7 +339,7 @@ SKIP:
      "$test_name: read method from saved filter alpha ");
   is_deeply( $filter->terms,  $args->{terms},
      "$test_name: read terms from saved filter alpha ");
-}
+} # end skip 3 DBD::SQLite not installed
 
 { my $test_name = "Filter creation, stored in memory";
 
@@ -492,12 +492,11 @@ SKIP:
  }
 
  SKIP:
-  {#27, #28, #29, #28
-    my $testcase  = "Saving transforms to an SQLite database";
+  { my $testcase  = "Saving transforms to an SQLite database";
 
     eval { require DBD::SQLite };
 
-    my $how_many = 4;
+    my $how_many = 5;
     skip "DBD::SQLite not installed", $how_many if $@;
 
     my $test_loc   = "$temp_loc/testG/sqlite";
@@ -550,7 +549,7 @@ SKIP:
     my $description = $transform2->description;
     is ($description, "remove dangerous phrases",
         "$test_name:$testcase  read expected description");
-  }
+  } # end skip *5* DBD::SQLite not installed
 }
 
 { my $test_name = "Testing lookup from filter standard libraries";

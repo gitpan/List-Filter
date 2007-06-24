@@ -59,10 +59,10 @@ filtering a list of items by apply a stack of perl regular
 expressions, with a persistant storage mechanism to allow
 the sharing of filters between different applications.
 
-A List::Filter filter is essentially a container class (which is
-to say, a hashref with some fairly boring accessor code wrapped
-around it), with an internally generated "dispatcher" object, so
-that it knows how to "apply" itself.
+A List::Filter filter would just be a container object (a hashref
+with some accessor code), except that it also has an internally
+generated "dispatcher" object, so that it knows how to "apply"
+itself.
 
 The "method" attribute of a filter object is indeed the name of
 a method, but not one defined inside this module.  Instead
@@ -73,15 +73,17 @@ See L<List::Filter::Project> for documentation of the system.
 
 =head1 OBJECT ATTRIBUTES
 
+=head2 filter attributes (stored associated with the given name)
+
 =over
-
-=item terms
-
-A list of filter items, e.g. search terms (essentially regexps).
 
 =item name
 
 The name of the search filter.
+
+=item terms
+
+A list of filter items, e.g. search terms (essentially regexps).
 
 =item method
 
@@ -95,6 +97,28 @@ regexp modifiers, e.g. "i").
 =item description
 
 A short description of the search filter.
+
+=back
+
+=head2
+
+=over
+
+=item dispatcher
+
+Internally used field that stores the dispatcher object, a handle used to apply
+the filter according to it's "method".
+
+=item storage_handler
+
+### TODO  weirdly enough, I can't figure out where this gets set.
+### if it isn't set, then the save method can't work.
+### but if the following flag is set, the apply method calls
+### the save method... do I ever set this flag at this level?
+
+=item save_filters_when_used
+
+### TODO
 
 =back
 
@@ -116,7 +140,7 @@ use List::Filter::Dispatcher;
 use Memoize;
 memoize( 'generate_dispatcher' );
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =item new
 
@@ -578,7 +602,8 @@ of, suitable for editing if you'd like to make changes.
 
 =head1 SEE ALSO
 
-L<List::Filter>
+L<List::Filter::Project>
+L<List::Filter::Dispatcher>
 
 =head1 AUTHOR
 
