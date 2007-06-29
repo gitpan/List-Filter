@@ -140,7 +140,7 @@ use List::Filter::Dispatcher;
 use Memoize;
 memoize( 'generate_dispatcher' );
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =item new
 

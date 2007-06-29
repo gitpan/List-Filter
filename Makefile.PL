@@ -14,7 +14,6 @@ WriteMakefile(
                          DBI                      => 1.0,
                          Hash::Util               => 0,
                          Carp                     => 0,
-                         Data::Dumper             => 0,
                          Env                      => 0,
                          Exporter                 => 1.0,
                          File::Basename           => 0,
